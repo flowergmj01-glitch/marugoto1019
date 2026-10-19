@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日語主修課程（Marugoto）新舊教材更替時間軸規劃（12月啟動版）</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      margin: 0;
+      padding: 0;
+    }
+    .slide-card {
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2.25rem 2.75rem;
+    }
+    @media (max-width: 1024px) {
+      .slide-card {
+        aspect-ratio: auto;
+        min-height: 540px;
+        padding: 1.5rem;
+      }
+    }
+    .table-compact th {
+      background-color: #f1f5f9;
+      color: #334155;
+      font-weight: 700;
+      padding: 0.45rem 0.65rem;
+      font-size: 0.78rem;
+      border-bottom: 2px solid #cbd5e1;
+      text-align: left;
+    }
+    .table-compact td {
+      padding: 0.4rem 0.65rem;
+      font-size: 0.76rem;
+      border-bottom: 1px solid #e2e8f0;
+      color: #1e293b;
+    }
+    .table-compact tr:hover td {
+      background-color: #f8fafc;
+    }
+    @media print {
+      body { background: #ffffff; }
+      .no-print { display: none !important; }
+      .slide-card {
+        page-break-after: always;
+        box-shadow: none;
+        border: 1px solid #cbd5e1;
+        margin-bottom: 0 !important;
+        height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Top Control Bar -->
+  <header class="no-print sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 px-6 py-3 flex flex-wrap items-center justify-between gap-4 shadow-sm">
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">16 頁完整簡報（12月啟動修正版）</span>
+      <h1 class="font-bold text-slate-800 text-base md:text-lg">Marugoto 課程新舊教材更替時間軸規劃（2026/12 正式切換）</h1>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="flex items-center bg-slate-100 rounded-lg p-1 border border-slate-200">
+        <button id="btnSingle" onclick="setMode('single')" class="px-3 py-1.5 rounded-md text-xs font-semibold bg-white text-blue-600 shadow-sm transition">單頁簡報模式</button>
+        <button id="btnAll" onclick="setMode('all')" class="px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition">全頁總覽 / 列印</button>
+      </div>
+
+      <div id="navControls" class="flex items-center gap-2">
+        <button onclick="prevSlide()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition">◀ 上一頁</button>
+        <span id="pageIndicator" class="text-xs font-bold text-slate-700 min-w-[70px] text-center">1 / 16</span>
+        <button onclick="nextSlide()" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold transition">下一頁 ▶</button>
+      </div>
+
+      <button onclick="window.print()" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold transition">匯出 PDF / 列印</button>
+    </div>
+  </header>
+
+  <!-- Main Slide Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
+    <!-- Slide Thumbnail Selector -->
+    <div id="thumbBar" class="no-print flex gap-1.5 overflow-x-auto pb-3 mb-4"></div>
+
+    <!-- Slides Wrapper -->
+    <div id="slidesContainer" class="space-y-8">
+
+      <!-- SLIDE 1: 封面 -->
+      <section class="slide-card rounded-2xl" data-slide="1">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <span class="text-xs font-bold tracking-widest uppercase text-blue-600">Curriculum Transition Roadmap (Dec 2026 Launch)</span>
+          <span class="text-xs text-slate-400 font-medium">2026 Q4 – 2027 Q2</span>
+        </div>
+        <div class="my-auto py-6">
+          <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-700 px-3.5 py-1.5 rounded-full text-xs font-bold mb-5">
+            <span>📘 教材版本切換專案報告（12月正式啟動版）</span>
+            <span>｜</span>
+            <span>全分校 61 個在籍與預排班級盤點</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">
+            日語主修課程（Marugoto）<br>
+            <span class="text-blue-600">12 月起停用舊教材與完全更替時間軸</span>
+          </h2>
+          <p class="text-base md:text-lg text-slate-600 max-w-3xl leading-relaxed mb-8">
+            因應 11 月初作業不及，將全校新教材正式發放日統一設定於 <strong>2026 年 12 月 1 日</strong>。本報告詳列 11 月緩衝期處置、各時間層級停用清單與完全更替終點路線。
+          </p>
+          <div class="grid grid-cols-3 gap-4 max-w-2xl">
+            <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-3.5">
+              <div class="text-xs text-slate-500 font-medium">首波停用舊教材啟動點</div>
+              <div class="text-xl font-extrabold text-blue-700 mt-1">2026 年 12 月 1 日</div>
+              <div class="text-[11px] text-slate-500 mt-0.5">11月全月作為採購與系統緩衝期</div>
+            </div>
+            <div class="bg-emerald-50/70 border border-emerald-200 rounded-xl p-3.5">
+              <div class="text-xs text-slate-500 font-medium">12月攔截後完全更替終點</div>
+              <div class="text-xl font-extrabold text-emerald-700 mt-1">2027 年 4 月 4 日</div>
+              <div class="text-[11px] text-slate-500 mt-0.5">11月僅1班順延至3月底，終點不變！</div>
+            </div>
+            <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-3.5">
+              <div class="text-xs text-slate-500 font-medium">自然延續最晚終點</div>
+              <div class="text-xl font-extrabold text-amber-700 mt-1">2027 年 5 月 19 日</div>
+              <div class="text-[11px] text-slate-500 mt-0.5">若12月預排班未攔截之自然終點</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>資料來源：marugoto課程銜接規劃（61筆有效排課明細｜12月啟動修正版）</span>
+          <span class="font-bold text-slate-600">Slide 01 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: 執行摘要與核心結論（12月啟動版） -->
+      <section class="slide-card rounded-2xl" data-slide="2">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase">Executive Summary — December Launch</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">核心結論：改從 12 月開始換書，對整體時程有何影響？</h3>
+          </div>
+          <span class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-200">決策總覽</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto py-3">
+          <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-4 flex flex-col justify-between">
+            <div>
+              <span class="inline-block bg-blue-600 text-white text-xs font-bold px-2.5 py-0.5 rounded mb-2">好消息 1：多數班級無縫銜接</span>
+              <h4 class="font-bold text-slate-900 text-base mb-2">11 月下旬結業班，本來就是 12 月開新課！</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                原 11 月結業的 9 個班中，有 <strong>5 個班在 11/18～11/28 才結束</strong>（含左營 50音、板橋旅遊篇、桃園 J2、中壢 J2），它們的下一期開課日原本就排在 <strong>12/02～12/07</strong>，改從 12 月啟動完全不受影響！
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-blue-200/60 text-xs font-semibold text-blue-800">
+              ✔ 這 5 班直接併入 12 月首波換新書<br>✔ 給採購與行政團隊整整 1 個月準備期
+            </div>
+          </div>
+
+          <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-4 flex flex-col justify-between">
+            <div>
+              <span class="inline-block bg-amber-600 text-white text-xs font-bold px-2.5 py-0.5 rounded mb-2">影響評估：僅 4 班需過渡處理</span>
+              <h4 class="font-bold text-slate-900 text-base mb-2">11 月初結業（11/2～11/7）之 4 班沿用舊書</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                因為 11 月中旬開課來不及發新書，這 4 班在 11 月開課時<strong>准予最後一次發放舊教材</strong>：其中忠孝 N4上-J1（11/11開）會多綁一冊舊書至 <strong>2027/03/29</strong> 換書；板橋 N4下中高階（11/14開）則於 <strong>2027/02/27</strong> 換書。
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-amber-200/60 text-xs font-semibold text-amber-900">
+              ✔ 僅少數 11 月中開課班級延後 1 冊換書<br>✔ 不影響全校最終完替大局
+            </div>
+          </div>
+
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-xl p-4 flex flex-col justify-between">
+            <div>
+              <span class="inline-block bg-emerald-600 text-white text-xs font-bold px-2.5 py-0.5 rounded mb-2">好消息 2：完替終點完全不變</span>
+              <h4 class="font-bold text-slate-900 text-base mb-2">守住 12 月 5 個預排班，一樣 2027/4/4 完替！</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                即使放行 11/11 忠孝班用舊書（3/29 完替），全校最晚的獨立班仍是板橋 1/24 結束之進階-J1（+30hr 至 <strong>2027/04/04</strong>）。只要 12 月開課的 <strong>5 個預排班</strong>全數攔截改新書，完替終點一天都不會延後！
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-emerald-200/60 text-xs font-semibold text-emerald-900">
+              ✔ 12月攔截方案終點：2027/04/04 完替<br>✔ 未攔截自然終點：2027/05/19 完替
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-wrap items-center justify-between gap-2 text-xs">
+          <span class="font-bold text-slate-700">📌 12月啟動方案波段調整：</span>
+          <span class="text-slate-600">｜ <strong>11月（T0 緩衝期）：</strong>0 班換新書（4 班 11 月開課沿用舊書，5 班待 12 月初開課換新書）</span>
+          <span class="text-slate-600">｜ <strong>12月（T1 首波啟動）：</strong>共 <strong>18 班</strong>集中切換新書！</span>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>教材更替策略核心摘要（12月啟動版）</span>
+          <span class="font-bold text-slate-600">Slide 02 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: 教材切換判定規則與全班級結構 -->
+      <section class="slide-card rounded-2xl" data-slide="3">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase">Transition Rules & Classification</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">各級別教材切換判定規則與 61 班結構分析</h3>
+          </div>
+          <span class="bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1 rounded-full">規則定義</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto py-3">
+          <!-- Category A -->
+          <div class="bg-white border-2 border-blue-500 rounded-xl p-4 shadow-sm">
+            <div class="flex justify-between items-center mb-2">
+              <span class="bg-blue-100 text-blue-800 text-xs font-extrabold px-2.5 py-1 rounded">類別 A｜上完立即換新教材</span>
+              <span class="text-lg font-extrabold text-blue-600">29 班</span>
+            </div>
+            <p class="text-xs text-slate-600 mb-3">課程名稱結尾為 <strong>J2、J4、中高階</strong>，代表單冊下半部修畢。<strong>凡於 11 月底後結業、12/1 起開下一期之班級</strong>，第 1 堂課即停用舊教材、改發新教材。</p>
+            <ul class="text-xs space-y-1.5 text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+              <li class="flex justify-between"><span>• N5上日語開口說入門-J2</span><span class="font-bold">6 班</span></li>
+              <li class="flex justify-between"><span>• N5下日語開口說初階-J4</span><span class="font-bold">8 班</span></li>
+              <li class="flex justify-between"><span>• N4上日語開口說中階-J2</span><span class="font-bold">5 班</span></li>
+              <li class="flex justify-between"><span>• N4下日語開口說中高階</span><span class="font-bold">5 班</span></li>
+              <li class="flex justify-between"><span>• N3上日語開口說進階-J2</span><span class="font-bold">5 班</span></li>
+            </ul>
+          </div>
+
+          <!-- Category B -->
+          <div class="bg-white border-2 border-amber-500 rounded-xl p-4 shadow-sm">
+            <div class="flex justify-between items-center mb-2">
+              <span class="bg-amber-100 text-amber-800 text-xs font-extrabold px-2.5 py-1 rounded">類別 B｜需多上 30hr 後換書</span>
+              <span class="text-lg font-extrabold text-amber-600">24 班</span>
+            </div>
+            <p class="text-xs text-slate-600 mb-3">課程結尾為 <strong>J1、J3 或是高階</strong>，原課程結束不換書，需沿用舊書再上 30hr（約 10 週下半冊）結業後才換新書（含 11/11 開課不及換書之忠孝 J1 班）。</p>
+            <ul class="text-xs space-y-1.5 text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+              <li class="flex justify-between"><span>• N5上日語開口說入門-J1</span><span class="font-bold">6 班</span></li>
+              <li class="flex justify-between"><span>• N5下日語開口說初階-J3</span><span class="font-bold">6 班</span></li>
+              <li class="flex justify-between"><span>• N4上日語開口說中階-J1</span><span class="font-bold">5 班</span></li>
+              <li class="flex justify-between"><span>• N4下日語開口說進階-J1</span><span class="font-bold">3 班</span></li>
+              <li class="flex justify-between"><span>• N3上/下日語開口說高階(J2/J3/J4)</span><span class="font-bold">4 班</span></li>
+            </ul>
+          </div>
+
+          <!-- Category C -->
+          <div class="bg-white border-2 border-emerald-500 rounded-xl p-4 shadow-sm">
+            <div class="flex justify-between items-center mb-2">
+              <span class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-2.5 py-1 rounded">類別 C｜基礎發音銜接換書</span>
+              <span class="text-lg font-extrabold text-emerald-600">8 班</span>
+            </div>
+            <p class="text-xs text-slate-600 mb-3"><strong>日語五十音發音、50音字彙練習旅遊篇</strong>為入門先修。所有 50 音班結業後升讀「N5上-J1」之開課日皆在 <strong>12 月以後</strong>，100% 直接採用新教材！</p>
+            <ul class="text-xs space-y-1.5 text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+              <li class="flex justify-between"><span>• 日語五十音發音（各分校）</span><span class="font-bold">7 班</span></li>
+              <li class="flex justify-between"><span>• 50音字彙練習旅遊篇（板橋）</span><span class="font-bold">1 班</span></li>
+              <li class="pt-1 text-emerald-800 font-semibold border-t border-slate-200">💡 備註：11/4 結業之板橋 50音班先接 11/11 旅遊篇，11/23 結束後於 12 月升 N5上 剛好換新書！</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>分類標準：依課程名稱結尾（J1/J3/高階 vs. J2/J4/中高階 vs. 50音）嚴格劃分</span>
+          <span class="font-bold text-slate-600">Slide 03 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: 完全更替時間線路總覽（12月啟動 Master Roadmap） -->
+      <section class="slide-card rounded-2xl" data-slide="4">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase">Master Timeline Roadmap (Starting Dec 2026)</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">新教材完全更替時間線路總覽（2026/12 啟動 ～ 2027/05）</h3>
+          </div>
+          <span class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-200">12月啟動時間軸</span>
+        </div>
+
+        <div class="my-auto py-2 space-y-4">
+          <!-- Timeline Horizontal Steps -->
+          <div class="grid grid-cols-7 gap-2 text-center">
+            <div class="bg-slate-100 border border-slate-300 rounded-xl p-2.5">
+              <div class="text-xs font-bold text-slate-600">緩衝期 T0</div>
+              <div class="text-sm font-extrabold text-slate-800 my-0.5">2026/11</div>
+              <div class="text-lg font-black text-slate-500">0 班換書</div>
+              <div class="text-[11px] text-slate-500">籌備緩衝期</div>
+              <div class="mt-1 text-[10px] bg-white rounded px-1 py-0.5 text-amber-700 font-semibold">4班沿用舊/5班待12月</div>
+            </div>
+            <div class="bg-blue-50 border-2 border-blue-500 rounded-xl p-2.5">
+              <div class="text-xs font-bold text-blue-800">時間層 T1 (首波)</div>
+              <div class="text-sm font-extrabold text-slate-900 my-0.5">2026/12</div>
+              <div class="text-lg font-black text-blue-600">18 班</div>
+              <div class="text-[11px] text-blue-700 font-bold">累計 29.5%</div>
+              <div class="mt-1 text-[10px] bg-white rounded px-1 py-0.5 text-blue-700 font-semibold">含11月底結業5班+12月13班</div>
+            </div>
+            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-2.5">
+              <div class="text-xs font-bold text-indigo-800">時間層 T2</div>
+              <div class="text-sm font-extrabold text-slate-900 my-0.5">2027/01</div>
+              <div class="text-lg font-black text-indigo-600">13 班</div>
+              <div class="text-[11px] text-slate-500">累計 50.8%</div>
+              <div class="mt-1 text-[10px] bg-white rounded px-1 py-0.5 text-indigo-700 font-semibold">過半完成！含+30hr班</div>
+            </div>
+            <div class="bg-indigo-50 border border-indigo-300 rounded-xl p-2.5">
+              <div class="text-xs font-bold text-indigo-800">時間層 T3</div>
+              <div class="text-sm font-extrabold text-slate-900 my-0.5">2027/02</div>
+              <div class="text-lg font-black text-indigo-600">11 班</div>
+              <div class="text-[11px] text-slate-500">累計 68.9%</div>
+              <div class="mt-1 text-[10px] bg-white rounded px-1 py-0.5 text-indigo-700 font-semibold">含11月順延之中高階班</div>
+            </div>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5">
+              <div class="text-xs font-bold text-emerald-800">時間層 T4</div>
+              <div class="text-sm font-extrabold text-slate-900 my-0.5">2027/03</div>
+              <div class="text-lg font-black text-emerald-600">10 班</div>
+              <div class="text-[11px] text-slate-500">累計 85.2%</div>
+              <div class="mt-1 text-[10px] bg-white rounded px-1 py-0.5 text-emerald-700 font-semibold">含11月順延之N3/N4班</div>
+            </div>
+            <div class="bg-emerald-100/80 border-2 border-emerald-500 rounded-xl p-2.5">
+              <div class="text-xs font-bold text-emerald-900">時間層 T5A</div>
+              <div class="text-sm font-extrabold text-slate-900 my-0.5">2027/04</div>
+              <div class="text-lg font-black text-emerald-700">4 班</div>
+              <div class="text-[11px] text-emerald-800 font-bold">累計 91.8%</div>
+              <div class="mt-1 text-[10px] bg-white rounded px-1 py-0.5 text-emerald-800 font-bold">★12月攔截4/4達100%</div>
+            </div>
+            <div class="bg-amber-50 border border-amber-300 rounded-xl p-2.5">
+              <div class="text-xs font-bold text-amber-800">時間層 T5B</div>
+              <div class="text-sm font-extrabold text-slate-900 my-0.5">2027/05</div>
+              <div class="text-lg font-black text-amber-600">3 班</div>
+              <div class="text-[11px] text-slate-500">自然完替 100%</div>
+              <div class="mt-1 text-[10px] bg-white rounded px-1 py-0.5 text-amber-800 font-semibold">未攔截之最晚終點</div>
+            </div>
+          </div>
+
+          <!-- Progress Bar Visualization -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+            <div class="flex justify-between text-xs font-bold text-slate-700 mb-2">
+              <span>12月啟動方案：全校新教材更替累計進度線（11月作為籌備期，12月正式拉開序幕）</span>
+              <span class="text-blue-600">2026/12 首波 30% ➔ 2027/01 破 50% ➔ 2027/04~05 達 100%</span>
+            </div>
+            <div class="w-full h-5 bg-slate-200 rounded-full overflow-hidden flex text-[10px] font-bold text-white leading-5 text-center">
+              <div style="width:6.5%" class="bg-slate-400" title="11月初過渡4班">11月緩衝</div>
+              <div style="width:29.5%" class="bg-blue-600">12月首波 18班 (29.5%)</div>
+              <div style="width:21.3%" class="bg-indigo-500">1月 +13班 (51%)</div>
+              <div style="width:18.0%" class="bg-indigo-600">2月 +11班 (69%)</div>
+              <div style="width:13.1%" class="bg-emerald-500">3月 +8~10班 (89%)</div>
+              <div style="width:6.6%" class="bg-emerald-600">4月</div>
+              <div style="width:5.0%" class="bg-amber-500">5月</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mt-3 text-xs text-slate-600">
+              <div>• <strong>11月緩衝期（T0）：</strong>11/02～11/07 結業之 4 班因 11 月中開課不及換新書，准予沿用舊教材 1 期（將於 2027 年 2～3 月換書）。</div>
+              <div>• <strong>12月首波大切換（T1）：</strong>11/18～11/28 結業之 5 班（12月初開下一期）＋ 12 月當月結業之 13 班，合計 <strong>18 班</strong>於 12 月集中換新書！</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>時間軸路線圖：11月零壓力備貨，12月首波集中切換 18 班</span>
+          <span class="font-bold text-slate-600">Slide 04 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: 跨期同班級追蹤（已排入表內的 9 組同班延續對照） -->
+      <section class="slide-card rounded-2xl" data-slide="5">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase">Cohort Continuity Analysis</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">排課連動解析（一）：表內已排定之 9 組「同班延續舊書」對照</h3>
+          </div>
+          <span class="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full border border-indigo-200">避免重複計算</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          包含原訂多上 30hr 的 8 組班級，以及**因應 11 月來不及換書而放行使用舊書的「忠孝分校 11/11 N4上-J1」**，這 9 組皆為同一批學生繼續使用舊教材，直到第二期（或下半冊）結束才換新書：
+        </p>
+
+        <div class="my-auto overflow-x-auto">
+          <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden">
+            <thead>
+              <tr>
+                <th>分校 / 時段 / 教師</th>
+                <th>第一期（表內 11~12 月結束班級）</th>
+                <th>第二期（表內已排定接續使用舊書班級）</th>
+                <th>正式停用舊教材、切換新書時點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">KB 板橋｜週一三 20:10｜陳家錡</td>
+                <td>[82] 日語五十音發音 (10/05~11/04)</td>
+                <td>[153] 50音字彙練習旅遊篇 (11/11~11/23)</td>
+                <td class="font-bold text-blue-700">11/23 結束後，12月開 N5上 換新書！</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KF 桃園｜週一三 20:10｜悠真</td>
+                <td>[261] N3下高階-J3 (10/12~11/11)</td>
+                <td>[264] N3下高階-J4 (11/16~12/23)</td>
+                <td class="font-bold text-blue-700">2026/12/23 結業後（若再+30hr則為 2027/3/3）</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KT 中壢｜週四 18:30｜曜宇</td>
+                <td>[198] N5下初階-J3 (09/10~11/12)</td>
+                <td>[216] N5下初階-J4 (11/19~2027/01/14)</td>
+                <td class="font-bold text-indigo-700">2027/01/14 結業後（升 N4上 換新書）</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">J01 板橋｜週一三 20:10｜呂詩捷</td>
+                <td>[194] N5下初階-J3 (09/02~11/11)</td>
+                <td>[214] N5下初階-J4 (11/18~2027/01/18)</td>
+                <td class="font-bold text-indigo-700">2027/01/18 結業後（升 N4上 換新書）</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KL 左營｜週二四 18:30｜pipi</td>
+                <td>[196] N5下初階-J3 (09/08~11/12)</td>
+                <td>[218] N5下初階-J4 (11/24~2027/01/21)</td>
+                <td class="font-bold text-indigo-700">2027/01/21 結業後（升 N4上 換新書）</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KV 台南｜週一三 18:30｜Tamamura</td>
+                <td>[154] N5上入門-J1 (09/28~11/25)</td>
+                <td>[189] N5上入門-J2 (12/02~2027/02/01)</td>
+                <td class="font-bold text-indigo-700">2027/02/01 結業後（升 N5下 換新書）</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KW 中山｜週二四 20:10｜Ikuka</td>
+                <td>[163] N5上入門-J1 (10/01~12/01)</td>
+                <td>[192] N5上入門-J2 (12/03~2027/02/02)</td>
+                <td class="font-bold text-indigo-700">2027/02/02 結業後（升 N5下 換新書）</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KT 中壢｜週五 18:30｜曜宇</td>
+                <td>[242] N4下進階-J1 (09/18~12/04)</td>
+                <td>[256] N3上進階-J2 (12/18~2027/03/12)</td>
+                <td class="font-bold text-emerald-700">2027/03/12 結業後（升下一階換新書）</td>
+              </tr>
+              <tr class="bg-amber-50/70">
+                <td class="font-semibold text-amber-900">KC 忠孝｜週一三 20:10｜Sumomo</td>
+                <td>[202] N5下初階-J4 (09/02~11/04)</td>
+                <td>[226] N4上中階-J1 (11/11~2027/01/18) <span class="text-[10px] text-amber-700">(11月不及換書)</span></td>
+                <td class="font-bold text-amber-800">11/11 放行用舊書，上完 J1+J2 後約 2027/03/29 換新書</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>備註：忠孝分校 11/11 開課之 [226] 因 11 月初來不及換書，直接歸入「11月放行沿用舊教材」並於 2027/03/29 換書</span>
+          <span class="font-bold text-slate-600">Slide 05 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: 關鍵攔截清單（12月開課務必改發新書的 5 個預排班） -->
+      <section class="slide-card rounded-2xl" data-slide="6">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-rose-600 uppercase">Critical Action Required in December</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">排課連動解析（二）：12 月開課務必攔截改發新書的 5 個預排班！</h3>
+          </div>
+          <span class="bg-rose-50 text-rose-700 text-xs font-bold px-3 py-1 rounded-full border border-rose-200">12月最優先攔截</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          既然設定 **12 月 1 日起全面啟動新教材**，下列 **5 個剛好在 12 月開課（12/02～12/28）的預排 J1 / J3 班級**，全數都是剛結業之 50音 / J2 / J4 原班直升！請務必在 12 月開課時直接發放新教材：
+        </p>
+
+        <div class="my-auto overflow-x-auto">
+          <table class="w-full table-compact border border-rose-200 rounded-lg overflow-hidden">
+            <thead>
+              <tr class="bg-rose-50">
+                <th class="!bg-rose-50 !text-rose-900">分校 / 時段 / 教師</th>
+                <th class="!bg-rose-50 !text-rose-900">前一期結業班級（11月底～12月結束）</th>
+                <th class="!bg-rose-50 !text-rose-900">表內預排之 12 月新開班（攔截目標）</th>
+                <th class="!bg-rose-50 !text-rose-900">12月直接換新書開課日</th>
+                <th class="!bg-rose-50 !text-rose-900">若12月未攔截之延誤後果</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">KF 桃園｜週一三 18:30｜靜</td>
+                <td>[185] N5上-J2 (11/23 結束)</td>
+                <td>[200] N5下-J3 (12/02~2027/02/08)</td>
+                <td class="font-extrabold text-emerald-700">2026/12/02 開課日</td>
+                <td class="text-rose-600 font-semibold">延後至 2027/04/19 才換</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KL 左營｜週一三 18:30｜朱書慧</td>
+                <td>[83] 五十音 (11/18 結束)</td>
+                <td>[174] N5上-J1 (12/07~2027/02/03)</td>
+                <td class="font-extrabold text-emerald-700">2026/12/07 開課日</td>
+                <td class="text-rose-600 font-semibold">延後至 2027/04/14 才換</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KW 中山｜週二四 18:30｜Sarah</td>
+                <td>[206] N5下-J4 (12/10 結束)</td>
+                <td>[227] N4上-J1 (12/22~2027/03/04)</td>
+                <td class="font-extrabold text-emerald-700">2026/12/22 開課日</td>
+                <td class="text-rose-600 font-semibold">延後至 2027/05/13 才換</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KV 台南｜週二四 18:30｜Tamamura</td>
+                <td>[205] N5下-J4 (12/01 結束)</td>
+                <td>[228] N4上-J1 (12/24~2027/03/09)</td>
+                <td class="font-extrabold text-emerald-700">2026/12/24 開課日</td>
+                <td class="text-rose-600 font-semibold">延後至 2027/05/18 才換</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">KA 站前｜週一三 20:10｜賴和風</td>
+                <td>[187] N5上-J2 (12/23 結束)</td>
+                <td>[201] N5下-J3 (12/28~2027/03/10)</td>
+                <td class="font-extrabold text-emerald-700">2026/12/28 開課日</td>
+                <td class="text-rose-600 font-semibold">延後至 2027/05/19 才換</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2 text-xs text-emerald-900 font-medium">
+          💡 <strong>關鍵優勢：</strong>原本唯一在 11 月開課的預排班（11/11 忠孝 N4上-J1）我們已放行用舊書；剩下這 **5 個班全部都在 12/02 以後才開課**，時間非常充裕，11 月底前改好系統教材設定即可！
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>關鍵攔截分析：只要守住這 5 個 12 月開課班級，全校依然能在 2027/04/04 完成 100% 更替</span>
+          <span class="font-bold text-slate-600">Slide 06 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: 緩衝期 T0 (2026年11月結業之 9 班處置對照) -->
+      <section class="slide-card rounded-2xl" data-slide="7">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-amber-600 uppercase">Buffer Period T0 — November 2026 Transition Handling</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">【緩衝期 T0】2026 年 11 月結業（9 班）過渡處置與順延明細</h3>
+          </div>
+          <span class="bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">11月不換書緩衝期</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          因 11 月初不及換書，原 11 月結業之 9 班拆分為兩類處置：**11 月上旬結業（4 班）准予 11 月開課沿用舊書 1 期**；**11 月下旬結業（5 班）因下一期本來就在 12 月開課，直接併入 12 月首波換新書**：
+        </p>
+
+        <div class="my-auto overflow-x-auto">
+          <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden">
+            <thead>
+              <tr>
+                <th>班級編號</th>
+                <th>課程名稱</th>
+                <th>分校 / 時段 / 教師</th>
+                <th>原結束日</th>
+                <th>11月緩衝期處置方案</th>
+                <th>調整後之正式切換新書時點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-amber-50/60">
+                <td class="font-mono text-xs">MG00911507N1KJ2</td>
+                <td class="font-bold">N3上進階-J2</td>
+                <td>KJ 嘉義｜週一三 18:30｜Frank</td>
+                <td>2026/11/02</td>
+                <td><span class="text-amber-800 font-bold">11月開課沿用舊書 1 期</span></td>
+                <td><strong>約 2027/03 下旬</strong>（上完11月所開之舊書期後換）</td>
+              </tr>
+              <tr class="bg-amber-50/60">
+                <td class="font-mono text-xs">MG00411509N1KC1</td>
+                <td class="font-bold">N5下初階-J4</td>
+                <td>KC 忠孝｜週一三 20:10｜Sumomo</td>
+                <td>2026/11/04</td>
+                <td><span class="text-amber-800 font-bold">11/11 [226] J1 沿用舊書</span></td>
+                <td><strong>約 2027/03/29 後</strong>（上完 N4上 J1+J2 後換新書）</td>
+              </tr>
+              <tr class="bg-amber-50/60">
+                <td class="font-mono text-xs">MG00911508N1KV1</td>
+                <td class="font-bold">N3上進階-J2</td>
+                <td>KV 台南｜週一三 20:10｜Tamamura</td>
+                <td>2026/11/04</td>
+                <td><span class="text-amber-800 font-bold">11月開課沿用舊書 1 期</span></td>
+                <td><strong>約 2027/03 下旬</strong>（上完11月所開之舊書期後換）</td>
+              </tr>
+              <tr class="bg-amber-50/60">
+                <td class="font-mono text-xs">MG00611508A6J011</td>
+                <td class="font-bold">N4上中階-J2</td>
+                <td>J01 板橋｜週六 14:00｜Aya</td>
+                <td>2026/11/07</td>
+                <td><span class="text-amber-800 font-bold">11/14 [241] 中高階沿用舊書</span></td>
+                <td><strong>2027/02/27 後立即換</strong>（上完 [241] 中高階後換新書）</td>
+              </tr>
+              <tr class="bg-blue-50/50">
+                <td class="font-mono text-xs">HG00311510N1KB1</td>
+                <td class="font-bold">日語五十音發音</td>
+                <td>KB 板橋｜週一三 20:10｜陳家錡</td>
+                <td>2026/11/04</td>
+                <td><span class="text-blue-700 font-bold">11/11 接旅遊篇 (6hr)</span></td>
+                <td><strong>2026/12 初開課即換</strong>（11/23 旅遊篇結束升 N5上）</td>
+              </tr>
+              <tr class="bg-blue-50/50">
+                <td class="font-mono text-xs">PB00911511N1KB1</td>
+                <td class="font-bold">50音字彙旅遊篇</td>
+                <td>KB 板橋｜週一三 20:10｜陳家錡</td>
+                <td>2026/11/23</td>
+                <td><span class="text-blue-700 font-bold">12月初才開 N5上-J1</span></td>
+                <td><strong>2026/12 初開課即換</strong>（無縫搭上 12 月首波新書）</td>
+              </tr>
+              <tr class="bg-blue-50/50">
+                <td class="font-mono text-xs">HG00311510N1KL1</td>
+                <td class="font-bold">日語五十音發音</td>
+                <td>KL 左營｜週一三 18:30｜朱書慧</td>
+                <td>2026/11/18</td>
+                <td><span class="text-blue-700 font-bold">下一期 12/07 才開課</span></td>
+                <td><strong>2026/12/07 開課即換</strong>（⚠️攔截 [174] N5上-J1 改新書）</td>
+              </tr>
+              <tr class="bg-blue-50/50">
+                <td class="font-mono text-xs">MG00211509N1KF1</td>
+                <td class="font-bold">N5上入門-J2</td>
+                <td>KF 桃園｜週一三 18:30｜靜</td>
+                <td>2026/11/23</td>
+                <td><span class="text-blue-700 font-bold">下一期 12/02 才開課</span></td>
+                <td><strong>2026/12/02 開課即換</strong>（⚠️攔截 [200] N5下-J3 改新書）</td>
+              </tr>
+              <tr class="bg-blue-50/50">
+                <td class="font-mono text-xs">MG00611509A6KT1</td>
+                <td class="font-bold">N4上中階-J2</td>
+                <td>KT 中壢｜週六 13:30｜靜</td>
+                <td>2026/11/28</td>
+                <td><span class="text-blue-700 font-bold">下一期 12/05 後才開課</span></td>
+                <td><strong>2026/12/05 後開課即換</strong>（無縫搭上 12 月首波新書）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>緩衝期 T0：清楚區分「11月中旬已開課放行用舊書（橘底 4 班）」與「12月初開課直接換新書（藍底 5 班）」</span>
+          <span class="font-bold text-slate-600">Slide 07 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: 時間層 T1-1 (2026年12月上旬啟動清單：11月底結業+12月初結業 共11班) -->
+      <section class="slide-card rounded-2xl" data-slide="8">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase">Time Layer T1 (Part 1) — Early-to-Mid December 2026</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">【時間層 T1-1】2026 年 12 月上中旬：首波停用舊教材清單（11 班）</h3>
+          </div>
+          <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">首波啟動｜進度 18.0%</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          <strong>2026 年 12 月 1 日起正式停發後續舊教材！</strong>本波包含 **11 月下旬結業、12 月初開新課的 5 班**，以及 **12/01～12/19 結業的 6 班**（共 11 班）：
+        </p>
+
+        <div class="my-auto overflow-x-auto">
+          <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden">
+            <thead>
+              <tr>
+                <th>班級編號</th>
+                <th>課程名稱</th>
+                <th>上課分點 / 時段 / 教師</th>
+                <th>原結束日</th>
+                <th>12月首波停止舊教材、切換新書時點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-blue-50/40">
+                <td class="font-mono text-xs">HG00311510N1KL1</td>
+                <td class="font-bold">日語五十音發音</td>
+                <td>KL 左營｜週一三 18:30｜朱書慧</td>
+                <td>2026/11/18</td>
+                <td><strong>12/07 開課換新書</strong>（⚠️攔截 [174] N5上-J1 改新書）</td>
+              </tr>
+              <tr class="bg-blue-50/40">
+                <td class="font-mono text-xs">HG00311510N1KB1</td>
+                <td class="font-bold">日語五十音發音</td>
+                <td>KB 板橋｜週一三 20:10｜陳家錡</td>
+                <td>2026/11/04</td>
+                <td><strong>12月初開課換新書</strong>（接完 [153] 旅遊篇後升 N5上 換新書）</td>
+              </tr>
+              <tr class="bg-blue-50/40">
+                <td class="font-mono text-xs">PB00911511N1KB1</td>
+                <td class="font-bold">50音字彙練習旅遊篇</td>
+                <td>KB 板橋｜週一三 20:10｜陳家錡</td>
+                <td>2026/11/23</td>
+                <td><strong>12月初開課換新書</strong>（11/23 結束，12 月開 N5上-J1 換新書）</td>
+              </tr>
+              <tr class="bg-blue-50/40">
+                <td class="font-mono text-xs">MG00211509N1KF1</td>
+                <td class="font-bold">N5上日語開口說入門-J2</td>
+                <td>KF 桃園｜週一三 18:30｜靜</td>
+                <td>2026/11/23</td>
+                <td><strong>12/02 開課換新書</strong>（⚠️攔截 [200] N5下-J3 改新書）</td>
+              </tr>
+              <tr class="bg-blue-50/40">
+                <td class="font-mono text-xs">MG00611509A6KT1</td>
+                <td class="font-bold">N4上日語開口說中階-J2</td>
+                <td>KT 中壢｜週六 13:30｜靜</td>
+                <td>2026/11/28</td>
+                <td><strong>12/05 後開課換新書</strong>（11月底結業，12月開下一期改新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00411510N2KV1</td>
+                <td class="font-bold">N5下日語開口說初階-J4</td>
+                <td>KV 台南｜週二四 18:30｜Tamamura</td>
+                <td class="font-bold text-blue-700">2026/12/01</td>
+                <td><strong>12/01 後立即換</strong>（⚠️攔截 12/24 [228] N4上-J1 改新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00211510N2KB1</td>
+                <td class="font-bold">N5上日語開口說入門-J2</td>
+                <td>KB 板橋｜週二四 20:10｜邱政德</td>
+                <td class="font-bold text-blue-700">2026/12/03</td>
+                <td><strong>12/03 後立即換</strong>（升 N5下-J3 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00911509N2KC1</td>
+                <td class="font-bold">N3上日語開口說進階-J2</td>
+                <td>KC 忠孝｜週二四 20:10｜Leo</td>
+                <td class="font-bold text-blue-700">2026/12/03</td>
+                <td><strong>12/03 後立即換</strong>（升下一階段改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00411509N2KW1</td>
+                <td class="font-bold">N5下日語開口說初階-J4</td>
+                <td>KW 中山｜週二四 18:30｜Sarah</td>
+                <td class="font-bold text-blue-700">2026/12/10</td>
+                <td><strong>12/10 後立即換</strong>（⚠️攔截 12/22 [227] N4上-J1 改新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00411510N8J011</td>
+                <td class="font-bold">N5下日語開口說初階-J4</td>
+                <td>J01 板橋｜週五 18:50｜陳家錡</td>
+                <td class="font-bold text-blue-700">2026/12/11</td>
+                <td><strong>12/11 後立即換</strong>（升 N4上-J1 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">HG00311511A6KB1</td>
+                <td class="font-bold">日語五十音發音</td>
+                <td>KB 板橋｜週六 14:00｜呂詩捷</td>
+                <td class="font-bold text-blue-700">2026/12/19</td>
+                <td><strong>12/19 後立即換</strong>（升 N5上-J1 改發新書）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>時間層 T1-1：2026 年 12 月上中旬首波停用舊教材明細（共 11 班）</span>
+          <span class="font-bold text-slate-600">Slide 08 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: 時間層 T1-2 (2026年12月下旬 12/20~12/31) -->
+      <section class="slide-card rounded-2xl" data-slide="9">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase">Time Layer T1 (Part 2) — Late December 2026</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">【時間層 T1-2】2026 年 12 月下旬：年底結業切換清單（7 班）</h3>
+          </div>
+          <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">12月合計 18 班完替 (29.5%)</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          12 月下旬（12/22～12/31）年底前再添 <strong>6 個 J2/J4 班</strong>與 <strong>1 個 50音班</strong>完成舊教材停用。12 月單月合計完成 **18 個班級**切換：
+        </p>
+
+        <div class="my-auto overflow-x-auto">
+          <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden">
+            <thead>
+              <tr>
+                <th>班級編號</th>
+                <th>課程名稱</th>
+                <th>上課分點 / 時段 / 教師</th>
+                <th>開始日</th>
+                <th>原結束日</th>
+                <th>停止舊教材、切換新教材時點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-mono text-xs">MG00611510N2KV1</td>
+                <td class="font-bold">N4上日語開口說中階-J2</td>
+                <td>KV 台南｜週二四 20:10｜Tamamura</td>
+                <td>2026/10/20</td>
+                <td class="font-bold text-blue-700">2026/12/22</td>
+                <td><strong>12/22 後立即換</strong>（升 N4下 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00211510N1KA1</td>
+                <td class="font-bold">N5上日語開口說入門-J2</td>
+                <td>KA 站前｜週一三 20:10｜賴和風</td>
+                <td>2026/10/19</td>
+                <td class="font-bold text-blue-700">2026/12/23</td>
+                <td><strong>12/23 後立即換</strong>（⚠️攔截 12/28 [201] N5下-J3 改新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">HG00311510M6KV1</td>
+                <td class="font-bold">日語五十音發音</td>
+                <td>KV 台南｜週六 10:30｜PEI</td>
+                <td>2026/10/17</td>
+                <td class="font-bold text-blue-700">2026/12/26</td>
+                <td><strong>12/26 後立即換</strong>（升 N5上-J1 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00211510N2KL1</td>
+                <td class="font-bold">N5上日語開口說入門-J2</td>
+                <td>KL 左營｜週二四 18:30｜レナ</td>
+                <td>2026/10/29</td>
+                <td class="font-bold text-blue-700">2026/12/29</td>
+                <td><strong>12/29 後立即換</strong>（升 N5下-J3 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00411510N2KA1</td>
+                <td class="font-bold">N5下日語開口說初階-J4</td>
+                <td>KA 站前｜週二四 18:30｜榮麗緹</td>
+                <td>2026/10/29</td>
+                <td class="font-bold text-blue-700">2026/12/29</td>
+                <td><strong>12/29 後立即換</strong>（升 N4上-J1 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00611510N2KA1</td>
+                <td class="font-bold">N4上日語開口說中階-J2</td>
+                <td>KA 站前｜週二四 20:10｜榮麗緹</td>
+                <td>2026/10/29</td>
+                <td class="font-bold text-blue-700">2026/12/29</td>
+                <td><strong>12/29 後立即換</strong>（升 N4下 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00611511N2KF1</td>
+                <td class="font-bold">N4上日語開口說中階-J2</td>
+                <td>KF 桃園｜週二四 20:10｜劉貞佑</td>
+                <td>2026/11/03</td>
+                <td class="font-bold text-blue-700">2026/12/31</td>
+                <td><strong>12/31 後立即換</strong>（2027 年初開課改發新書）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-xs text-slate-600">
+          📌 <strong>補充說明：</strong>編號 [264] N3下高階-J4（桃園分校，11/16～12/23）若認定高階-J4 即為該冊最後階段，亦可於 <strong>2026/12/23</strong> 同步切換新書（本簡報依「高階+30hr」規則將其列於第 13 頁對照）。
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>時間層 T1-2：2026 年 12 月底累計 18 班完成換書（佔比 29.5%）</span>
+          <span class="font-bold text-slate-600">Slide 09 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: 時間層 T2-1 (2027年1月：直接結業班) -->
+      <section class="slide-card rounded-2xl" data-slide="10">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-indigo-600 uppercase">Time Layer T2 (Part 1) — January 2027 Direct Switch</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">【時間層 T2-1】2027 年 1 月：中高階、J4 與 50音結業切換（8 班）</h3>
+          </div>
+          <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">進度 42.6% (26/61)</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          邁入 2027 年 1 月，首波 <strong>N4下中高階（3 班）</strong>、<strong>50音（2 班）</strong>與 <strong>N5下-J4（3 班，即 9 月 J3 延續班）</strong>正式結業並停用舊教材：
+        </p>
+
+        <div class="my-auto overflow-x-auto">
+          <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden">
+            <thead>
+              <tr>
+                <th>班級編號</th>
+                <th>課程名稱</th>
+                <th>上課分點 / 時段 / 教師</th>
+                <th>開始日</th>
+                <th>原結束日</th>
+                <th>停止舊教材、切換新教材時點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-mono text-xs">MG01411509A6KV1</td>
+                <td class="font-bold">N4下日語開口說中高階</td>
+                <td>KV 台南｜週六 14:00｜Tamamura</td>
+                <td>2026/09/12</td>
+                <td class="font-bold text-indigo-700">2027/01/02</td>
+                <td><strong>2027/01/02 後立即換</strong>（升 N3 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">HG00311512N4KT1</td>
+                <td class="font-bold">日語五十音發音</td>
+                <td>KT 中壢｜週一 18:30｜曜宇</td>
+                <td>2026/12/07</td>
+                <td class="font-bold text-indigo-700">2027/01/04</td>
+                <td><strong>2027/01/04 後立即換</strong>（升 N5上 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG01411510N2KC2</td>
+                <td class="font-bold">N4下日語開口說中高階</td>
+                <td>KC 忠孝｜週二四 20:10｜Sumomo</td>
+                <td>2026/10/13</td>
+                <td class="font-bold text-indigo-700">2027/01/14</td>
+                <td><strong>2027/01/14 後立即換</strong>（升 N3 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00411510N7KT1</td>
+                <td class="font-bold">N5下日語開口說初階-J4</td>
+                <td>KT 中壢｜週四 18:30｜曜宇</td>
+                <td>2026/11/19</td>
+                <td class="font-bold text-indigo-700">2027/01/14</td>
+                <td><strong>2027/01/14 後立即換</strong>（🔗前一期為 [198] J3）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00411511N1J011</td>
+                <td class="font-bold">N5下日語開口說初階-J4</td>
+                <td>J01 板橋｜週一三 20:10｜呂詩捷</td>
+                <td>2026/11/18</td>
+                <td class="font-bold text-indigo-700">2027/01/18</td>
+                <td><strong>2027/01/18 後立即換</strong>（🔗前一期為 [194] J3）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00411511N2KL1</td>
+                <td class="font-bold">N5下日語開口說初階-J4</td>
+                <td>KL 左營｜週二四 18:30｜pipi</td>
+                <td>2026/11/24</td>
+                <td class="font-bold text-indigo-700">2027/01/21</td>
+                <td><strong>2027/01/21 後立即換</strong>（🔗前一期為 [196] J3）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG01411510N2KL1</td>
+                <td class="font-bold">N4下日語開口說中高階</td>
+                <td>KL 左營｜週二四 20:10｜pipi</td>
+                <td>2026/10/27</td>
+                <td class="font-bold text-indigo-700">2027/01/28</td>
+                <td><strong>2027/01/28 後立即換</strong>（升 N3 改發新書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">HG00311509N5KJ1</td>
+                <td class="font-bold">日語五十音發音</td>
+                <td>KJ 嘉義｜週五 18:30｜待聘</td>
+                <td>2026/11/13</td>
+                <td class="font-bold text-indigo-700">2027/01/29</td>
+                <td><strong>2027/01/29 後立即換</strong>（升 N5上 改發新書）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>時間層 T2-1：2027 年 1 月直接結業換書明細</span>
+          <span class="font-bold text-slate-600">Slide 10 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: 時間層 T2-2 & T3-1 (2027年1~2月：+30hr 期滿與 2月結業班) -->
+      <section class="slide-card rounded-2xl" data-slide="11">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-indigo-600 uppercase">Time Layer T2 (Part 2) & T3 (Part 1) — Jan & Feb 2027</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">【時間層 T2-2 ＆ T3-1】1月 +30hr 期滿與 2月直接結業（11 班）</h3>
+          </div>
+          <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">進度 60.7% (37/61)</span>
+        </div>
+
+        <div class="my-auto space-y-3 overflow-x-auto">
+          <div>
+            <h4 class="text-xs font-bold text-indigo-800 mb-1">🔹 2027 年 1 月：原 11 月結束之 J3 / 高階班「多上 30hr（約 10 週）」期滿換書（5 班）</h4>
+            <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden">
+              <thead>
+                <tr>
+                  <th>班級編號</th>
+                  <th>課程名稱</th>
+                  <th>分校 / 時段 / 教師</th>
+                  <th>原結束日</th>
+                  <th>+30hr 後切換新教材時點</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-mono text-xs">MG00311509N1J011</td>
+                  <td class="font-bold">N5下初階-J3</td>
+                  <td>J01 板橋｜週一三 20:10｜呂詩捷</td>
+                  <td>2026/11/11</td>
+                  <td><strong>2027/01/18 後換書</strong>（🔗已對應表內 [214] J4 結束日）</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG00311508N7KT1</td>
+                  <td class="font-bold">N5下初階-J3</td>
+                  <td>KT 中壢｜週四 18:30｜曜宇</td>
+                  <td>2026/11/12</td>
+                  <td><strong>2027/01/14 後換書</strong>（🔗已對應表內 [216] J4 結束日）</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG00311509N2KL1</td>
+                  <td class="font-bold">N5下初階-J3</td>
+                  <td>KL 左營｜週二四 18:30｜pipi</td>
+                  <td>2026/11/12</td>
+                  <td><strong>2027/01/21 後換書</strong>（🔗已對應表內 [218] J4 結束日）</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG01211510N1KF1</td>
+                  <td class="font-bold">N3下高階-J3</td>
+                  <td>KF 桃園｜週一三 20:10｜悠真</td>
+                  <td>2026/11/11</td>
+                  <td><strong>約 2027/01/20 後換書</strong>（或接 [264] J4 12/23 結束換）</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG01211510N2KB1</td>
+                  <td class="font-bold">N3下高階-J3</td>
+                  <td>KB 板橋｜週二四 20:10｜吉留孝一</td>
+                  <td>2026/11/17</td>
+                  <td><strong>約 2027/01/26 後換書</strong>（上完後續 30hr 換書）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-indigo-800 mb-1">🔹 2027 年 2 月：當月直接結業之 J2 / 中高階 / 50音班（6 班，含 11/07 板橋順延班）</h4>
+            <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden">
+              <thead>
+                <tr>
+                  <th>班級編號</th>
+                  <th>課程名稱</th>
+                  <th>分校 / 時段 / 教師</th>
+                  <th>原結束日</th>
+                  <th>停止舊教材、切換新教材時點</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-mono text-xs">MG00211512N1KV1</td>
+                  <td class="font-bold">N5上入門-J2</td>
+                  <td>KV 台南｜週一三 18:30｜Tamamura</td>
+                  <td>2027/02/01</td>
+                  <td><strong>2027/02/01 後立即換</strong>（🔗前一期為 [154] J1）</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG00211512N2KW1</td>
+                  <td class="font-bold">N5上入門-J2</td>
+                  <td>KW 中山｜週二四 20:10｜Ikuka</td>
+                  <td>2027/02/02</td>
+                  <td><strong>2027/02/02 後立即換</strong>（🔗前一期為 [163] J1）</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG01411510N1KB1</td>
+                  <td class="font-bold">N4下中高階</td>
+                  <td>KB 板橋｜週一三 20:10｜鄒思雯</td>
+                  <td>2027/02/03</td>
+                  <td><strong>2027/02/03 後立即換</strong>（升 N3 改發新書）</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG00911511N1KB1</td>
+                  <td class="font-bold">N3上進階-J2</td>
+                  <td>KB 板橋｜週一三 20:10｜MAYUMII</td>
+                  <td>2027/02/03</td>
+                  <td><strong>2027/02/03 後立即換</strong>（升下一階段改發新書）</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">HG00311511N5KV1</td>
+                  <td class="font-bold">日語五十音發音</td>
+                  <td>KV 台南｜週五 20:10｜Tamamura</td>
+                  <td>2027/02/19</td>
+                  <td><strong>2027/02/19 後立即換</strong>（全校最後一班 50音結業）</td>
+                </tr>
+                <tr class="bg-amber-50/50">
+                  <td class="font-mono text-xs">MG01411511A6KB1</td>
+                  <td class="font-bold">N4下中高階</td>
+                  <td>KB 板橋｜週六 14:00｜Aya</td>
+                  <td>2027/02/27</td>
+                  <td><strong>2027/02/27 後立即換</strong>（🔗即 11/07 [230] J2 放行用舊書之延續班）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>時間層 T2-2 與 T3-1：2027 年 1～2 月換書明細</span>
+          <span class="font-bold text-slate-600">Slide 11 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: 時間層 T3-2 (2027年2月：+30hr 期滿換書班) -->
+      <section class="slide-card rounded-2xl" data-slide="12">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-indigo-600 uppercase">Time Layer T3 (Part 2) — February 2027 (+30hr Cohorts)</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">【時間層 T3-2】2027 年 2 月：J1 班上完 +30hr 後切換清單（5 班）</h3>
+          </div>
+          <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">進度 68.9% (42/61)</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          2026 年 11 月底至 12 月中旬結束的 <strong>5 個 J1 班級</strong>，在沿用舊教材繼續上完 30 小時（J2 階段）後，將於 <strong>2027 年 2 月份</strong>正式停用舊教材、切換為新教材：
+        </p>
+
+        <div class="my-auto overflow-x-auto">
+          <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden">
+            <thead>
+              <tr>
+                <th>班級編號</th>
+                <th>課程名稱</th>
+                <th>上課分點 / 時段 / 教師</th>
+                <th>原 J1 開始日</th>
+                <th>原 J1 結束日</th>
+                <th>+30hr (J2) 結束後切換新教材時點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-mono text-xs">MG00111509N1KV1</td>
+                <td class="font-bold">N5上日語開口說入門-J1</td>
+                <td>KV 台南｜週一三 18:30｜Tamamura</td>
+                <td>2026/09/28</td>
+                <td>2026/11/25</td>
+                <td class="font-bold text-indigo-700">2027/02/01 後換書（🔗對應表內 [189] J2 結束日）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00111509N2KW1</td>
+                <td class="font-bold">N5上日語開口說入門-J1</td>
+                <td>KW 中山｜週二四 20:10｜Ikuka</td>
+                <td>2026/10/01</td>
+                <td>2026/12/01</td>
+                <td class="font-bold text-indigo-700">2027/02/02 後換書（🔗對應表內 [192] J2 結束日）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00811507N8KT1</td>
+                <td class="font-bold">N4下日語開口說進階-J1</td>
+                <td>KT 中壢｜週五 18:30｜曜宇</td>
+                <td>2026/09/18</td>
+                <td>2026/12/04</td>
+                <td class="font-bold text-indigo-700">約 2027/02/12 後換書（🔗表內接 [256] 39hr 至 3/12）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00111510M6KB1</td>
+                <td class="font-bold">N5上日語開口說入門-J1</td>
+                <td>KB 板橋｜週六 10:00｜陳怡蕙</td>
+                <td>2026/10/17</td>
+                <td>2026/12/19</td>
+                <td class="font-bold text-indigo-700">約 2027/02/27 後換書（上完 10 週 J2 後升 N5下）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00511510M6KB1</td>
+                <td class="font-bold">N4上日語開口說中階-J1</td>
+                <td>KB 板橋｜週六 10:00｜邱政德</td>
+                <td>2026/10/03</td>
+                <td>2026/12/19</td>
+                <td class="font-bold text-indigo-700">約 2027/02/27 後換書（上完 10 週 J2 後升 N4下）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-3 text-xs text-indigo-900 flex items-center justify-between">
+          <span>🎯 <strong>階段里程碑（2027 年 2 月底）：</strong>全校已有近 <strong>7 成班級</strong>完成新教材更替！包含 11/14 板橋開課之 [241] N4下中高階也在 2/27 結束並換上新書。</span>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>時間層 T3-2：2027 年 2 月底 50音與 N4下中高階 100% 切換完畢</span>
+          <span class="font-bold text-slate-600">Slide 12 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: 時間層 T4 (2027年3月：含11月初放行用舊書之順延班) -->
+      <section class="slide-card rounded-2xl" data-slide="13">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-emerald-600 uppercase">Time Layer T4 — March 2027</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">【時間層 T4】2027 年 3 月：春季班與 11 月順延班切換清單（8+3 班）</h3>
+          </div>
+          <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">進度 88.5% (54/61)</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          2027 年 3 月份除了原本在 3 月到期換書的班級外，**11 月初（11/2～11/4）因來不及換書而放行沿用舊教材的忠孝、嘉義、台南班**，也會在 3 月下旬正式完成舊書停用：
+        </p>
+
+        <div class="my-auto overflow-x-auto">
+          <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden">
+            <thead>
+              <tr>
+                <th>班級編號</th>
+                <th>課程名稱</th>
+                <th>上課分點 / 時段 / 教師</th>
+                <th>原結束日</th>
+                <th>規則分類</th>
+                <th>停止舊教材、切換新教材時點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-mono text-xs">MG01311511N1KF1</td>
+                <td class="font-bold">N3下高階-J4</td>
+                <td>KF 桃園｜週一三 20:10｜悠真</td>
+                <td>2026/12/23</td>
+                <td>高階+30hr (或即換)</td>
+                <td><strong>約 2027/03/03 後</strong>（若 J4 結業即換則為 12/23）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG01111510A6KB1</td>
+                <td class="font-bold">N3上高階-J2</td>
+                <td>KB 板橋｜週六 14:00｜本多</td>
+                <td>2026/12/26</td>
+                <td>高階+30hr</td>
+                <td><strong>約 2027/03/06 後換書</strong>（上完後續 30hr 階段）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00111511N2KC1</td>
+                <td class="font-bold">N5上入門-J1</td>
+                <td>KC 忠孝｜週二四 20:10｜Vivian</td>
+                <td>2026/12/31</td>
+                <td>J1+30hr</td>
+                <td><strong>約 2027/03/11 後換書</strong>（上完 J2 後升 N5下）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00911512N8KT1</td>
+                <td class="font-bold">N3上進階-J2</td>
+                <td>KT 中壢｜週五 18:30｜曜宇</td>
+                <td>2027/03/12</td>
+                <td>J2 上完即換</td>
+                <td><strong>2027/03/12 後立即換</strong>（🔗前一期為 [242] 進階-J1）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00111510N9KJ1</td>
+                <td class="font-bold">N5上入門-J1</td>
+                <td>KJ 嘉義｜週六 18:30｜待聘</td>
+                <td>2027/01/02</td>
+                <td>J1+30hr</td>
+                <td><strong>約 2027/03/13 後換書</strong>（上完 J2 後升 N5下）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00811509M7J011</td>
+                <td class="font-bold">N4下進階-J1</td>
+                <td>J01 板橋｜週日 10:00｜Han</td>
+                <td>2027/01/03</td>
+                <td>J1+30hr</td>
+                <td><strong>約 2027/03/14 後換書</strong>（上完進階-J2 後換書）</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-xs">MG00511510N6KC1</td>
+                <td class="font-bold">N4上中階-J1</td>
+                <td>KC 忠孝｜週六 14:30｜呂學臨</td>
+                <td>2027/01/16</td>
+                <td>J1+30hr</td>
+                <td><strong>約 2027/03/27 後換書</strong>（上完 J2 後升 N4下）</td>
+              </tr>
+              <tr class="bg-amber-50/70">
+                <td class="font-mono text-xs">MG00511511N1KC1</td>
+                <td class="font-bold">N4上中階-J1 <span class="text-[10px] text-amber-800">(接[202])</span></td>
+                <td>KC 忠孝｜週一三 20:10｜Sumomo</td>
+                <td>2027/01/18</td>
+                <td>11月放行用舊書</td>
+                <td><strong>約 2027/03/29 後換書</strong>（11/11 開課用舊書，上完 J2 換）</td>
+              </tr>
+              <tr class="bg-amber-50/70">
+                <td class="font-mono text-xs">MG00911507N1KJ2 等</td>
+                <td class="font-bold">N3上進階-J2 <span class="text-[10px] text-amber-800">(嘉義/台南)</span></td>
+                <td>KJ 嘉義 & KV 台南｜11/2、11/4結業</td>
+                <td>2026/11/04</td>
+                <td>11月放行用舊書</td>
+                <td><strong>約 2027/03 下旬換書</strong>（11月開課沿用舊書1期結束後換）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>時間層 T4：11 月初來不及換書的班級，最晚皆於 2027 年 3 月底前全數消化完畢！</span>
+          <span class="font-bold text-slate-600">Slide 13 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 14: 時間層 T5 (2027年4月~5月：完全更替收尾終點) -->
+      <section class="slide-card rounded-2xl" data-slide="14">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-emerald-600 uppercase">Time Layer T5 — April & May 2027 Final Completion</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">【時間層 T5】2027 年 4～5 月：完全更替完畢之收尾清單（7 班）</h3>
+          </div>
+          <span class="bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full">進度 100% (61/61)</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          最後 7 個班級落在 2027 年 4～5 月。請注意：**其中 5 個班級都在 2026 年 12 月才開課（12/02～12/28）**，只要在 12 月開課時直接發新書，全校就能在 **2027/04/04** 100% 更替完畢：
+        </p>
+
+        <div class="my-auto space-y-3 overflow-x-auto">
+          <div>
+            <h4 class="text-xs font-bold text-emerald-800 mb-1">🔹 2027 年 4 月切換清單（4 班）— ★ 只要 12 月攔截成功，2027/04/04 即為全校完全更替終點！</h4>
+            <table class="w-full table-compact border border-emerald-300 rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-emerald-50">
+                  <th>班級編號</th>
+                  <th>課程名稱</th>
+                  <th>分校 / 時段 / 教師</th>
+                  <th>原結束日</th>
+                  <th>+30hr 預計換書日</th>
+                  <th>12月啟動方案下之狀態說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-mono text-xs">MG00311511A6KB1</td>
+                  <td class="font-bold">N5下初階-J3</td>
+                  <td>KB 板橋｜週六 14:00｜陳家錡</td>
+                  <td>2027/01/23</td>
+                  <td class="font-bold text-emerald-700">約 2027/04/03 後</td>
+                  <td>11/14 已開課之獨立 J3，上完 J4（約 4/3）後換新書</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG00811511A7KB2</td>
+                  <td class="font-bold">N4下進階-J1</td>
+                  <td>KB 板橋｜週日 14:00｜陳家錡</td>
+                  <td>2027/01/24</td>
+                  <td class="font-bold text-emerald-700">約 2027/04/04 後</td>
+                  <td><strong>★ 11/08 已開課，全校最後一班！2027/04/04 後 100% 完替</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG00111512N1KL1</td>
+                  <td class="font-bold">N5上入門-J1</td>
+                  <td>KL 左營｜週一三 18:30｜朱書慧</td>
+                  <td>2027/02/03</td>
+                  <td class="font-bold text-amber-700">約 2027/04/14 後</td>
+                  <td>⚠️ <strong>2026/12/07 才開課！</strong>（接50音）12月直接改發新書即免等</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG00311512N1KF1</td>
+                  <td class="font-bold">N5下初階-J3</td>
+                  <td>KF 桃園｜週一三 18:30｜靜</td>
+                  <td>2027/02/08</td>
+                  <td class="font-bold text-amber-700">約 2027/04/19 後</td>
+                  <td>⚠️ <strong>2026/12/02 才開課！</strong>（接J2）12月直接改發新書即免等</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-amber-800 mb-1">🔹 2027 年 5 月切換清單（3 班）— 全部都是 12 月下旬（12/22～12/28）才開課的預排班！</h4>
+            <table class="w-full table-compact border border-amber-300 rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-amber-50">
+                  <th>班級編號</th>
+                  <th>課程名稱</th>
+                  <th>分校 / 時段 / 教師</th>
+                  <th>原結束日</th>
+                  <th>+30hr 預計換書日</th>
+                  <th>12月啟動方案下之狀態說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-mono text-xs">MG00511512N2KW1</td>
+                  <td class="font-bold">N4上中階-J1</td>
+                  <td>KW 中山｜週二四 18:30｜Sarah</td>
+                  <td>2027/03/04</td>
+                  <td class="font-bold text-amber-700">約 2027/05/13 後</td>
+                  <td>⚠️ <strong>2026/12/22 才開課！</strong>（接J4）12月直接改發新書即免等</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG00511512N2KV1</td>
+                  <td class="font-bold">N4上中階-J1</td>
+                  <td>KV 台南｜週二四 18:30｜Tamamura</td>
+                  <td>2027/03/09</td>
+                  <td class="font-bold text-amber-700">約 2027/05/18 後</td>
+                  <td>⚠️ <strong>2026/12/24 才開課！</strong>（接J4）12月直接改發新書即免等</td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-xs">MG00311512N1KA1</td>
+                  <td class="font-bold">N5下初階-J3</td>
+                  <td>KA 站前｜週一三 20:10｜賴和風</td>
+                  <td>2027/03/10</td>
+                  <td class="font-bold text-amber-700">約 2027/05/19 後</td>
+                  <td>⚠️ <strong>2026/12/28 才開課！</strong>（接J2）12月直接改發新書即免等</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>時間層 T5：改從 12 月開始換書，完全不會犧牲 2027/04/04 提前完替的目標！</span>
+          <span class="font-bold text-slate-600">Slide 14 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 15: 各分校教材切換波段熱力分佈表（12月啟動版） -->
+      <section class="slide-card rounded-2xl" data-slide="15">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase">Branch & Level Matrix (Dec 2026 Launch)</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">全國 10 大分校 × 各時間層停止舊教材班數分佈（12月啟動版）</h3>
+          </div>
+          <span class="bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1 rounded-full">分校盤點</span>
+        </div>
+
+        <p class="text-xs text-slate-600 mt-1">
+          將 11 月設為緩衝期（0 班換書）後，各分校自 **2026 年 12 月起**每月應停用舊教材、改發新教材之班級統計表：
+        </p>
+
+        <div class="my-auto overflow-x-auto">
+          <table class="w-full table-compact border border-slate-200 rounded-lg overflow-hidden text-center">
+            <thead>
+              <tr>
+                <th class="text-left">上課分點（分校代碼）</th>
+                <th class="!bg-slate-200">2026/11<br><span class="text-[10px] font-normal">T0 緩衝期</span></th>
+                <th class="!bg-blue-50 !text-blue-900">2026/12<br><span class="text-[10px] font-normal">T1 首波啟動</span></th>
+                <th>2027/01<br><span class="text-[10px] font-normal">時間層 T2</span></th>
+                <th>2027/02<br><span class="text-[10px] font-normal">時間層 T3</span></th>
+                <th>2027/03<br><span class="text-[10px] font-normal">時間層 T4</span></th>
+                <th>2027/04~05<br><span class="text-[10px] font-normal">時間層 T5</span></th>
+                <th>分校總班數</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-left font-bold">KB 外語板橋分校</td>
+                <td class="text-slate-400">0</td>
+                <td class="font-bold text-blue-700 bg-blue-50/40">4 <span class="text-[10px] font-normal">(含11月底2班)</span></td>
+                <td>1</td>
+                <td class="font-bold text-indigo-700">5</td>
+                <td>1</td>
+                <td>2</td>
+                <td class="font-extrabold">13 班</td>
+              </tr>
+              <tr>
+                <td class="text-left font-bold">KV 外語台南成功</td>
+                <td class="text-slate-400">0 <span class="text-[10px] text-amber-700">(1班延至3月)</span></td>
+                <td class="font-bold text-blue-700 bg-blue-50/40">3</td>
+                <td>1</td>
+                <td class="font-bold text-indigo-700">3</td>
+                <td>1 <span class="text-[10px] text-amber-700">(11月順延)</span></td>
+                <td>1 <span class="text-[10px] text-rose-600">(可12月攔截)</span></td>
+                <td class="font-extrabold">9 班</td>
+              </tr>
+              <tr>
+                <td class="text-left font-bold">KL 外語高雄左營</td>
+                <td class="text-slate-400">0</td>
+                <td class="font-bold text-blue-700 bg-blue-50/40">2 <span class="text-[10px] font-normal">(含12/7開課)</span></td>
+                <td class="font-bold text-indigo-700">3</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1 <span class="text-[10px] text-rose-600">(可12月攔截)</span></td>
+                <td class="font-extrabold">6 班</td>
+              </tr>
+              <tr>
+                <td class="text-left font-bold">KC 外語忠孝分校</td>
+                <td class="text-slate-400">0 <span class="text-[10px] text-amber-700">(1班接[226])</span></td>
+                <td class="font-bold text-blue-700 bg-blue-50/40">1</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="font-bold text-emerald-700">3 <span class="text-[10px] text-amber-700">(含[226])</span></td>
+                <td>0</td>
+                <td class="font-extrabold">6 班</td>
+              </tr>
+              <tr>
+                <td class="text-left font-bold">KT 外語中壢分校</td>
+                <td class="text-slate-400">0</td>
+                <td class="font-bold text-blue-700 bg-blue-50/40">1 <span class="text-[10px] font-normal">(11/28結業班)</span></td>
+                <td class="font-bold text-indigo-700">3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="font-extrabold">6 班</td>
+              </tr>
+              <tr>
+                <td class="text-left font-bold">KF 外語桃園分校</td>
+                <td class="text-slate-400">0</td>
+                <td class="font-bold text-blue-700 bg-blue-50/40">2 <span class="text-[10px] font-normal">(含12/2開課)</span></td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1 <span class="text-[10px] text-rose-600">(可12月攔截)</span></td>
+                <td class="font-extrabold">5 班</td>
+              </tr>
+              <tr>
+                <td class="text-left font-bold">J01 日語板橋分校</td>
+                <td class="text-slate-400">0 <span class="text-[10px] text-amber-700">(1班接[241])</span></td>
+                <td class="font-bold text-blue-700 bg-blue-50/40">1</td>
+                <td>2</td>
+                <td>0 <span class="text-[10px] text-amber-700">(見KB[241])</span></td>
+                <td>1</td>
+                <td>0</td>
+                <td class="font-extrabold">5 班</td>
+              </tr>
+              <tr>
+                <td class="text-left font-bold">KA 外語站前分校</td>
+                <td class="text-slate-400">0</td>
+                <td class="font-bold text-blue-700 bg-blue-50/40">3</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1 <span class="text-[10px] text-rose-600">(可12月攔截)</span></td>
+                <td class="font-extrabold">4 班</td>
+              </tr>
+              <tr>
+                <td class="text-left font-bold">KW 外語高雄中山</td>
+                <td class="text-slate-400">0</td>
+                <td class="font-bold text-blue-700 bg-blue-50/40">1</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+                <td>1 <span class="text-[10px] text-rose-600">(可12月攔截)</span></td>
+                <td class="font-extrabold">4 班</td>
+              </tr>
+              <tr>
+                <td class="text-left font-bold">KJ 外語嘉義分校</td>
+                <td class="text-slate-400">0 <span class="text-[10px] text-amber-700">(1班延至3月)</span></td>
+                <td class="bg-blue-50/40">0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2 <span class="text-[10px] text-amber-700">(含11月順延)</span></td>
+                <td>0</td>
+                <td class="font-extrabold">3 班</td>
+              </tr>
+              <tr class="bg-slate-100 font-extrabold">
+                <td class="text-left">全校合計（12月起切換數）</td>
+                <td class="text-slate-500">0 班 (4班順延)</td>
+                <td class="text-blue-700 bg-blue-100/60">18 班</td>
+                <td class="text-indigo-700">13 班</td>
+                <td class="text-indigo-700">11 班</td>
+                <td class="text-emerald-700">10 班 (含順延)</td>
+                <td class="text-amber-700">7 班</td>
+                <td class="text-slate-900">61 班</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>分校統計：11月全校零換書壓力，12月起由板橋（4班）、台南（3班）、站前（3班）領頭啟動</span>
+          <span class="font-bold text-slate-600">Slide 15 / 16</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 16: 行動方案與執行檢核表（12月啟動版） -->
+      <section class="slide-card rounded-2xl" data-slide="16">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase">Action Plan & Milestones (December Launch)</span>
+            <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">總結：12月啟動版關鍵行動里程碑（SOP 檢核表）</h3>
+          </div>
+          <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">執行藍圖</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto py-2">
+          <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center">1</span>
+              <h4 class="font-extrabold text-slate-900 text-sm">2026 年 11 月全月：緩衝籌備與 12 月預排班鎖定</h4>
+            </div>
+            <ul class="text-xs text-slate-600 space-y-1.5 pl-8 list-disc">
+              <li><strong>11月中旬開課放行：</strong>11/02～11/07 結業之 4 班（含忠孝 11/11 [226]、板橋 11/14 [241]）准予沿用舊教材開課，不強行換書。</li>
+              <li><strong>系統鎖定：</strong>於 11 月底前，將 12 月開課的 <strong>5 個預排班（編號 200、174、227、228、201）</strong>教材設定改為新教材。</li>
+            </ul>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">2</span>
+              <h4 class="font-extrabold text-slate-900 text-sm">2026 年 12/01 起：正式啟動第一波停用舊教材（18 班）</h4>
+            </div>
+            <ul class="text-xs text-slate-600 space-y-1.5 pl-8 list-disc">
+              <li>11 月下旬結業之 5 班（12/02～12/07 開新課）與 12 月當月結業之 13 班，合計 <strong>18 班</strong>集中換發新教材。</li>
+              <li>自 12/01 起，所有 50 音班結業升讀 N5上-J1 一律發放新教材。</li>
+            </ul>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-6 h-6 rounded-full bg-indigo-600 text-white text-xs font-bold flex items-center justify-center">3</span>
+              <h4 class="font-extrabold text-slate-900 text-sm">2027 年 1～2 月：寒假第二波換書高峰（24 班）</h4>
+            </div>
+            <ul class="text-xs text-slate-600 space-y-1.5 pl-8 list-disc">
+              <li>追蹤 9～10 月開課之 J1、J3 班完成 +30hr（J2、J4）後於 1～2 月順利銜接新教材。</li>
+              <li>11 月順延用舊書的板橋 N4下中高階（[241]）於 <strong>2027/02/27</strong> 結業並完成換書。</li>
+            </ul>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-xs font-bold flex items-center justify-center">4</span>
+              <h4 class="font-extrabold text-slate-900 text-sm">2027 年 3～4 月初：達成 100% 新教材完全更替！</h4>
+            </div>
+            <ul class="text-xs text-slate-600 space-y-1.5 pl-8 list-disc">
+              <li>11 月放行用舊書的忠孝 [226] N4上-J1 與嘉義/台南 N3 班，於 <strong>3 月下旬</strong>上完舊書並全數切換新書。</li>
+              <li><strong>4/03～4/04</strong> 板橋最後兩班（[199]、[247]）完成 +30hr 後，<strong>全校 100% 換書完畢！</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl p-3.5 flex items-center justify-between">
+          <div class="text-xs md:text-sm font-bold">
+            ✨ 專案總結：改從 12 月啟動不僅爭取到整整 1 個月準備期，且最終完成 100% 更替的時間點（2027/4/4）完全不延誤！
+          </div>
+          <span class="text-xs bg-white/20 px-3 py-1 rounded-full font-semibold whitespace-nowrap">報告完畢・感謝聆聽</span>
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-100 pt-3">
+          <span>執行檢核與里程碑總結（12月啟動修正版）</span>
+          <span class="font-bold text-slate-600">Slide 16 / 16</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 16;
+    let viewMode = 'single';
+
+    const slides = document.querySelectorAll('.slide-card');
+    const pageIndicator = document.getElementById('pageIndicator');
+    const navControls = document.getElementById('navControls');
+    const thumbBar = document.getElementById('thumbBar');
+
+    const slideTitles = [
+      "1. 封面(12月版)", "2. 12月啟動評估", "3. 切換規則", "4. 完整時間線",
+      "5. 同班延續(9組)", "6. 12月攔截(5班)", "7. T0: 11月緩衝", "8. T1: 12月上中旬",
+      "9. T1: 12月下旬", "10. T2: 1月直接換", "11. T2/T3: 1~2月", "12. T3: 2月+30hr",
+      "13. T4: 3月(含順延)", "14. T5: 4~5月終點", "15. 分校分佈表", "16. 執行里程碑"
+    ];
+
+    function initThumbs() {
+      thumbBar.innerHTML = '';
+      for (let i = 1; i <= totalSlides; i++) {
+        const btn = document.createElement('button');
+        btn.id = `thumb-${i}`;
+        btn.onclick = () => goToSlide(i);
+        btn.className = `px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap border transition ${
+          i === currentSlide
+            ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
+            : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+        }`;
+        btn.textContent = slideTitles[i - 1];
+        thumbBar.appendChild(btn);
+      }
+    }
+
+    function updateDisplay() {
+      slides.forEach((slide, idx) => {
+        const slideNum = idx + 1;
+        if (viewMode === 'single') {
+          slide.style.display = slideNum === currentSlide ? 'flex' : 'none';
+        } else {
+          slide.style.display = 'flex';
+        }
+      });
+
+      pageIndicator.textContent = `${currentSlide} / ${totalSlides}`;
+      navControls.style.display = viewMode === 'single' ? 'flex' : 'none';
+      thumbBar.style.display = viewMode === 'single' ? 'flex' : 'none';
+
+      for (let i = 1; i <= totalSlides; i++) {
+        const t = document.getElementById(`thumb-${i}`);
+        if (t) {
+          t.className = `px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap border transition ${
+            i === currentSlide
+              ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
+              : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+          }`;
+        }
+      }
+    }
+
+    function setMode(mode) {
+      viewMode = mode;
+      const btnSingle = document.getElementById('btnSingle');
+      const btnAll = document.getElementById('btnAll');
+      if (mode === 'single') {
+        btnSingle.className = 'px-3 py-1.5 rounded-md text-xs font-semibold bg-white text-blue-600 shadow-sm transition';
+        btnAll.className = 'px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition';
+      } else {
+        btnAll.className = 'px-3 py-1.5 rounded-md text-xs font-semibold bg-white text-blue-600 shadow-sm transition';
+        btnSingle.className = 'px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition';
+      }
+      updateDisplay();
+    }
+
+    function goToSlide(n) {
+      currentSlide = n;
+      updateDisplay();
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateDisplay();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateDisplay();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (viewMode !== 'single') return;
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
+    });
+
+    initThumbs();
+    updateDisplay();
+  </script>
+</body>
+</html>
